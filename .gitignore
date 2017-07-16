@@ -6,3 +6,4 @@ build/
 umd/
 .tern-port
 npm-debug.log
+.idea

@@ -3,23 +3,16 @@
   "version": "2.0.3",
   "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
   "main": "index.js",
-  "typings": "index.d.ts",
   "scripts": {
-    "build": "mkdir -p umd && browserify index.js -s EventEmitter3 | uglifyjs -cm -o umd/eventemitter3.min.js",
     "benchmark": "find benchmarks/run -name '*.js' -exec benchmarks/start.sh {} \\;",
-    "test": "nyc --reporter=html --reporter=text mocha test/test.js",
-    "test-browser": "node test/browser.js",
-    "prepublishOnly": "npm run build",
-    "sync": "node versions.js"
+    "test": "nyc --reporter=html --reporter=text mocha test/test.js"
   },
   "files": [
-    "index.js",
-    "index.d.ts",
-    "umd"
+    "index.js"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/primus/eventemitter3.git"
+    "url": "https://github.com/lucky-libora/eventemitter3"
   },
   "keywords": [
     "EventEmitter",
@@ -38,20 +31,15 @@
     "reactor",
     "subscribe"
   ],
-  "author": "Arnout Kazemier",
+  "author": "Aleksey Vasilyev",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/primus/eventemitter3/issues"
+    "url": "https://github.com/lucky-libora/eventemitter3/issues"
   },
-  "pre-commit": "sync, test",
+  "pre-commit": "test",
   "devDependencies": {
     "assume": "~1.5.0",
-    "browserify": "~14.4.0",
     "mocha": "~3.4.0",
-    "nyc": "~11.0.1",
-    "pre-commit": "~1.2.0",
-    "sauce-browsers": "~1.0.0",
-    "sauce-test": "~1.3.3",
-    "uglify-js": "~3.0.18"
+    "nyc": "~11.0.1"
   }
 }
