@@ -23,9 +23,9 @@ var EventEmitter2 = require('eventemitter2').EventEmitter2
   new EventEmitter1();
 }).add('EventEmitter2', function() {
   new EventEmitter2();
-}).add('EventEmitter3@0.1.6', function() {
+}).add('EventEmitter3', function() {
   new EventEmitter3();
-}).add('EventEmitter3(master)', function() {
+}).add('EventEmitter3(lucky)', function() {
   new Master();
 }).add('Drip', function() {
   new Drip();

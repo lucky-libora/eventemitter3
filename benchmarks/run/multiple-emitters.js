@@ -68,12 +68,12 @@ master.on('foo', foo).on('foo', bar).on('foo', baz);
   ee2.emit('foo', 'bar');
   ee2.emit('foo', 'bar', 'baz');
   ee2.emit('foo', 'bar', 'baz', 'boom');
-}).add('EventEmitter3@0.1.6', function() {
+}).add('EventEmitter3', function() {
   ee3.emit('foo');
   ee3.emit('foo', 'bar');
   ee3.emit('foo', 'bar', 'baz');
   ee3.emit('foo', 'bar', 'baz', 'boom');
-}).add('EventEmitter3(master)', function() {
+}).add('EventEmitter3(lucky)', function() {
   master.emit('foo');
   master.emit('foo', 'bar');
   master.emit('foo', 'bar', 'baz');

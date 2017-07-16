@@ -50,9 +50,9 @@ for (var i = 0; i < 25; i++) {
   ee1.listeners('event');
 }).add('fastemitter', function() {
   fe.listeners('event');
-}).add('EventEmitter3@0.1.6', function() {
+}).add('EventEmitter3', function() {
   ee3.listeners('event');
-}).add('EventEmitter3(master)', function() {
+}).add('EventEmitter3(lucky)', function() {
   master.listeners('event');
 }).on('cycle', function cycle(e) {
   console.log(e.target.toString());

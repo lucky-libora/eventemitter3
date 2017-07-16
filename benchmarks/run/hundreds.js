@@ -59,11 +59,11 @@ for (i = 0; i < 10; i++) {
   for (i = 0; i < 10; i++) {
     ee2.emit('event:' + i);
   }
-}).add('EventEmitter3@0.1.6', function() {
+}).add('EventEmitter3', function() {
   for (i = 0; i < 10; i++) {
     ee3.emit('event:' + i);
   }
-}).add('EventEmitter3(master)', function() {
+}).add('EventEmitter3(lucky)', function() {
   for (i = 0; i < 10; i++) {
     master.emit('event:' + i);
   }

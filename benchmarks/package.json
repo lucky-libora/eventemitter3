@@ -15,7 +15,7 @@
     "drip": "latest",
     "event-emitter": "latest",
     "eventemitter2": "latest",
-    "eventemitter3": "0.1.6",
+    "eventemitter3": "latest",
     "fastemitter": "latest"
   }
 }

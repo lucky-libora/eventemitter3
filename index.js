@@ -37,14 +37,15 @@ class EE {
  * @private
  */
 function addListener(emitter, event, fn, once) {
-    let listener = new EE(fn, once);
-    if (!emitter._events[event]) {
+    const listener = new EE(fn, once);
+    const events = emitter._events[event];
+    if (!events) {
         emitter._events[event] = listener;
         emitter._eventsCount++;
-    } else if (!emitter._events[event].fn) {
-        emitter._events[event].push(listener);
+    } else if (!events.fn) {
+        events.push(listener);
     } else {
-        emitter._events[event] = [emitter._events[event], listener];
+        emitter._events[event] = [events, listener];
     }
     return emitter;
 }
@@ -143,7 +144,7 @@ class EventEmitter {
      * @public
      */
     emit(event, a1, a2, a3, a4, a5) {
-        let listeners = this._events[event];
+        const listeners = this._events[event];
         if (!listeners) {
             return false;
         }

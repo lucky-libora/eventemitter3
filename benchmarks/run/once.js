@@ -39,9 +39,9 @@ var ee2 = new EventEmitter2()
   ee1.once('foo', handle).emit('foo');
 }).add('EventEmitter2', function() {
   ee2.once('foo', handle).emit('foo');
-}).add('EventEmitter3@0.1.6', function() {
+}).add('EventEmitter3', function() {
   ee3.once('foo', handle).emit('foo');
-}).add('EventEmitter3(master)', function() {
+}).add('EventEmitter3(lucky)', function() {
   master.once('foo', handle).emit('foo');
 }).add('Drip', function() {
   drip.once('foo', handle).emit('foo');
