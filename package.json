@@ -1,7 +1,7 @@
 {
-  "name": "eventemitter3",
-  "version": "2.0.3",
-  "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+  "name": "event-emitter3",
+  "version": "1.0.0",
+  "description": "Event-Emitter3 focuses on performance while maintaining a Node.js compatible interface.",
   "main": "index.js",
   "scripts": {
     "benchmark": "find benchmarks/run -name '*.js' -exec benchmarks/start.sh {} \\;",

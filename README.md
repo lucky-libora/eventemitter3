@@ -1,12 +1,8 @@
-# EventEmitter3
-
-[![Version npm](https://img.shields.io/npm/v/eventemitter3.svg?style=flat-square)](https://www.npmjs.com/package/eventemitter3)[![Build Status](https://img.shields.io/travis/primus/eventemitter3/master.svg?style=flat-square)](https://travis-ci.org/primus/eventemitter3)[![Dependencies](https://img.shields.io/david/primus/eventemitter3.svg?style=flat-square)](https://david-dm.org/primus/eventemitter3)[![Coverage Status](https://img.shields.io/coveralls/primus/eventemitter3/master.svg?style=flat-square)](https://coveralls.io/r/primus/eventemitter3?branch=master)[![IRC channel](https://img.shields.io/badge/IRC-irc.freenode.net%23primus-00a8ff.svg?style=flat-square)](https://webchat.freenode.net/?channels=primus)
-
-[![Sauce Test Status](https://saucelabs.com/browser-matrix/eventemitter3.svg)](https://saucelabs.com/u/eventemitter3)
+# event-emitter3 fork of EventEmitter3
 
 EventEmitter3 is a high performance EventEmitter. It has been micro-optimized
 for various of code paths making this, one of, if not the fastest EventEmitter
-available for Node.js and browsers. The module is API compatible with the
+available for Node.js. The module is API compatible with the
 EventEmitter that ships by default with Node.js but there are some slight
 differences:
 
@@ -18,7 +14,6 @@ differences:
 - No `setMaxListeners` and its pointless memory leak warnings. If you want to
   add `end` listeners you should be able to do that without modules complaining.
 - No `listenerCount` method. Use `EE.listeners(event).length` instead.
-- Support for custom context for events so there is no need to use `fn.bind`.
 - The `listeners` method can do existence checking instead of returning only
   arrays.
 - The `removeListener` method removes all matching listeners, not only the
@@ -32,50 +27,22 @@ support.
 ## Installation
 
 ```bash
-$ npm install --save eventemitter3
+$ npm install --save event-emitter3
 ```
 
-## CDN
-
-Recommended CDN:
-
-```text
-https://unpkg.com/eventemitter3@latest/umd/eventemitter3.min.js
-```
 
 ## Usage
 
 After installation the only thing you need to do is require the module:
 
 ```js
-var EventEmitter = require('eventemitter3');
+var EventEmitter = require('event-emitter3');
 ```
 
 And you're ready to create your own EventEmitter instances. For the API
 documentation, please follow the official Node.js documentation:
 
 http://nodejs.org/api/events.html
-
-### Contextual emits
-
-We've upgraded the API of the `EventEmitter.on`, `EventEmitter.once` and
-`EventEmitter.removeListener` to accept an extra argument which is the `context`
-or `this` value that should be set for the emitted events. This means you no
-longer have the overhead of an event that required `fn.bind` in order to get a
-custom `this` value.
-
-```js
-var EE = new EventEmitter()
-  , context = { foo: 'bar' };
-
-function emitted() {
-  console.log(this === context); // true
-}
-
-EE.once('event-name', emitted, context);
-EE.on('another-event', emitted, context);
-EE.removeListener('another-event', emitted, context);
-```
 
 ### Existence
 
@@ -98,7 +65,6 @@ EE.listeners('unknown-name', true); // returns false
 This module is well tested. You can run:
 
 - `npm test` to run the tests under Node.js.
-- `npm run test-browser` to run the tests in real browsers via Sauce Labs.
 
 We also have a set of benchmarks to compare EventEmitter3 with some available
 alternatives. To run the benchmarks run `npm run benchmark`.
