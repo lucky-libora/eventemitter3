@@ -1,6 +1,6 @@
 {
   "name": "event-emitter3",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Event-Emitter3 focuses on performance while maintaining a Node.js compatible interface.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "test": "nyc --reporter=html --reporter=text mocha test/test.js"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "index.d.ts"
   ],
   "repository": {
     "type": "git",
