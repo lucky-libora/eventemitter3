@@ -29,19 +29,19 @@ export class EventEmitter {
   /**
    * Add a listener for a given event.
    */
-  on(event: string | symbol, fn: ListenerFn, context?: any): this;
-  addListener(event: string | symbol, fn: ListenerFn, context?: any): this;
+  on(event: string | symbol, fn: ListenerFn): this;
+  addListener(event: string | symbol, fn: ListenerFn): this;
 
   /**
    * Add a one-time listener for a given event.
    */
-  once(event: string | symbol, fn: ListenerFn, context?: any): this;
+  once(event: string | symbol, fn: ListenerFn): this;
 
   /**
    * Remove the listeners of a given event.
    */
-  removeListener(event: string | symbol, fn?: ListenerFn, context?: any, once?: boolean): this;
-  off(event: string | symbol, fn?: ListenerFn, context?: any, once?: boolean): this;
+  removeListener(event: string | symbol, fn?: ListenerFn, once?: boolean): this;
+  off(event: string | symbol, fn?: ListenerFn, once?: boolean): this;
 
   /**
    * Remove all listeners, or those of the specified event.
