@@ -25,6 +25,7 @@ export class EventEmitter {
    * Calls each of the listeners registered for a given event.
    */
   emit(event: string | symbol, ...args: Array<any>): boolean;
+  asyncEmit(event: string | symbol, ...args: Array<any>): boolean;
 
   /**
    * Add a listener for a given event.
